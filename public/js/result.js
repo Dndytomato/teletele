@@ -32,12 +32,13 @@
     `;
   }
 
-  // Turn parity always alternates word/drawing, so grouping two consecutive turns
-  // per page naturally pairs each prompt with the drawing made for it. With an odd
-  // total turn count, the very last turn (the final guess) is left alone on its own page.
+  // The opening word (turn 1) stands alone; pairing every drawing with the word that
+  // followed it (what someone guessed FROM that drawing) means the final drawing and
+  // the final guess always land on the same page together. Since the total turn count
+  // is always odd, the remaining turns after the first split into even pairs with no leftover.
   function renderCompleted(turns) {
-    const pages = [];
-    for (let i = 0; i < turns.length; i += 2) {
+    const pages = [[turns[0]]];
+    for (let i = 1; i < turns.length; i += 2) {
       pages.push(turns.slice(i, i + 2));
     }
     const pagesHtml = pages

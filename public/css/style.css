@@ -311,11 +311,14 @@ input[type='number'] {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 10px;
   padding: 4px 2px;
 }
 .carousel-card {
-  flex: 1 1 0;
+  /* fixed proportion of the page (not flex-grow) so a lone card on a page is the
+     same size as a card sharing its page with another, instead of stretching to fill */
+  flex: 0 0 calc(50% - 5px);
   min-height: 0;
   background: var(--card);
   border: 1px solid var(--border);
