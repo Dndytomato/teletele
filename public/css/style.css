@@ -52,6 +52,71 @@ p {
   margin-top: 16px;
 }
 
+/* top bar / username badge */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.top-bar-title {
+  margin: 0;
+}
+.username-badge {
+  flex: 0 0 auto;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--text);
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.button-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+.button-row .btn {
+  flex: 1;
+}
+
+/* my-games list */
+.game-list {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.game-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  text-decoration: none;
+  color: var(--text);
+}
+.game-list-title {
+  font-weight: 600;
+}
+.game-list-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+.game-list-arrow {
+  color: var(--muted);
+}
+
 .btn {
   display: inline-block;
   width: 100%;
@@ -226,34 +291,67 @@ input[type='number'] {
   margin-top: 8px;
 }
 
-/* carousel */
-.carousel {
+/* carousel: vertical, scroll-snap per page, each page holds up to 2 cards
+   (one word + one drawing) sized to both fit within a single screen */
+.carousel-vertical {
   display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 12px;
-  padding: 8px 0 16px;
+  flex-direction: column;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  gap: 0;
+  height: min(70vh, 640px);
+  min-height: 360px;
+  padding: 8px 0;
   -webkit-overflow-scrolling: touch;
+  border-radius: 16px;
+}
+.carousel-page {
+  scroll-snap-align: start;
+  flex: 0 0 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 4px 2px;
 }
 .carousel-card {
-  scroll-snap-align: center;
-  flex: 0 0 85%;
+  flex: 1 1 0;
+  min-height: 0;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 16px;
-  padding: 16px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 }
 .carousel-card .turn-label {
   color: var(--muted);
   font-size: 0.8rem;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
+  flex: 0 0 auto;
 }
 .carousel-card .author {
   font-weight: 600;
-  margin-top: 10px;
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+.carousel-card .prompt-image {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.carousel-card .prompt-word {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 .carousel-nav {
   display: flex;
