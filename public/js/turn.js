@@ -220,7 +220,7 @@
         nextUrl = res.data.nextUrl;
       }
       const result = await window.ShareUtil.shareLink({
-        title: '텔레스트레이션',
+        title: '직장인 텔레스트레이션',
         text: '내 차례가 끝났어요! 다음 사람이 되어주세요.',
         url: nextUrl,
       });

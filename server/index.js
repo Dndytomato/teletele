@@ -38,7 +38,7 @@ app.use((err, req, res, next) => {
 reconcileOnBoot();
 
 app.listen(PORT, () => {
-  console.log(`텔레스트레이션 서버 실행 중: http://localhost:${PORT}`);
+  console.log(`직장인 텔레스트레이션 서버 실행 중: http://localhost:${PORT}`);
 });
 
 process.on('SIGINT', () => {

@@ -26,7 +26,7 @@
       Kakao.Share.sendDefault({
         objectType: 'feed',
         content: {
-          title: title || '텔레스트레이션',
+          title: title || '직장인 텔레스트레이션',
           description: text || '',
           imageUrl: new URL('/img/share-banner.png', window.location.origin).toString(),
           link: { mobileWebUrl: absoluteUrl, webUrl: absoluteUrl },

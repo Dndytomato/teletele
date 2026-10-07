@@ -2,7 +2,7 @@
   "name": "telestrations",
   "version": "1.0.0",
   "private": true,
-  "description": "친구들과 즐기는 비동기 텔레스트레이션(그림 전화) 웹 게임",
+  "description": "친구들과 즐기는 비동기 직장인 텔레스트레이션(그림 전화) 웹 게임",
   "main": "server/index.js",
   "scripts": {
     "start": "node --env-file-if-exists=.env server/index.js",
