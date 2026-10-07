@@ -12,6 +12,10 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json({ limit: '3mb' }));
 
+app.get('/api/config', (req, res) => {
+  res.json({ kakaoJsKey: process.env.KAKAO_JS_KEY || null });
+});
+
 app.use('/api/devices', deviceAuth, devicesRouter);
 app.use('/api/games', deviceAuth, gamesRouter);
 app.use('/api/turns', deviceAuth, turnsRouter);

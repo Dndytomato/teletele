@@ -225,7 +225,7 @@
         url: nextUrl,
       });
       btn.disabled = false;
-      if (result.method !== 'share') {
+      if (result.method === 'clipboard' || result.method === 'manual') {
         const box = document.getElementById('link-box');
         box.hidden = false;
         box.textContent = (result.url || nextUrl) + ' (채팅방에 복사해서 붙여넣어 주세요)';

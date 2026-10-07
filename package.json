@@ -5,14 +5,14 @@
   "description": "친구들과 즐기는 비동기 텔레스트레이션(그림 전화) 웹 게임",
   "main": "server/index.js",
   "scripts": {
-    "start": "node server/index.js",
-    "dev": "node server/index.js"
+    "start": "node --env-file-if-exists=.env server/index.js",
+    "dev": "node --env-file-if-exists=.env server/index.js"
   },
   "dependencies": {
     "express": "^4.19.2",
     "nanoid": "^3.3.7"
   },
   "engines": {
-    "node": ">=22.5.0"
+    "node": ">=22.9.0"
   }
 }
