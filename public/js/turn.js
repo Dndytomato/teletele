@@ -199,8 +199,8 @@
     }
 
     app.innerHTML = `
-      <h1>제출 완료!</h1>
-      <p class="subtitle">다음 참여자를 지정해주세요. 공유 버튼을 누르면 카카오톡, 인스타그램 등에서 친구를 골라 보낼 수 있어요.</p>
+      <h1>이 그림/제시어를 누구에게 전달할까요?</h1>
+      <p class="subtitle">공유 버튼을 누르면 카카오톡, 인스타그램 등에서 친구를 골라 보낼 수 있어요.<br />*마지막 타자가 제시어를 입력 완료한 후에 게임 결과를 볼 수 있어요!</p>
       <div class="card">
         <button id="next-btn" class="btn btn-primary">다음 참여자 지정</button>
         <div id="link-box" class="share-url-box" hidden></div>
